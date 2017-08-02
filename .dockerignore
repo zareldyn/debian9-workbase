@@ -1,4 +1,3 @@
-.Dockerfile.swp
-
-.dockerignore
-Dockerfile
+*
+!root
+!user
