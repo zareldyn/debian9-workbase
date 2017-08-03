@@ -1,6 +1,8 @@
 # debian9-workbase
 A customized minimal Debian 9 Docker image with one regular user, one text editor and a nicer prompt.
 
+![Bash session screenshot](/debian9-workbase.png?raw=true)
+
 ## Goal
 
 I often need to build Debian-based Docker images that, in addition to their main purpose (web server, etc), must have the minimal set of tools so I can work inside the container with command line.  
