@@ -34,3 +34,4 @@ RUN ["/bin/bash", "-c", " \
 # Redefines some shell behaviors
 COPY root/* /root/
 COPY user/* /home/$MAIN_USER_LOGIN/
+RUN chown -R $MAIN_USER_ID:$MAIN_USER_ID /home/$MAIN_USER_LOGIN
