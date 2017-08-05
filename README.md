@@ -32,7 +32,7 @@ In all cases, a running container will contain an environment variable called PA
 You can also statically customize the login, ID, and password (might be useful in some cases) of the normal user by specifying (for example)  
 `--build-arg MAIN_USER_LOGIN=batman`  
 `--build-arg MAIN_USER_ID=1006`  
-`--build-arg main_user_passwd=l5KfQR935b0s`  
+`--build-arg main_user_passwd='$1$3zQH3LzF$btPwP2cM/fbEDxGFTJBIq/'`  
 when you execute this Dockerfile.
 
 The value you give to main_user_password must be the *openSSL hash* of the real password ; run `openssl passwd -1` then enter the real password to obtain the hash.  
