@@ -5,8 +5,9 @@ A customized minimal Debian 9 Docker image with one regular user, one text edito
 
 ## Goal
 
-I often need to build Debian-based Docker images that, in addition to their main purpose (web server, etc), must have the minimal set of tools so I can work inside the container with my favorite commands.  
+I often need to build Debian-based Docker images that, in addition to their main purpose (web server, etc), must have the minimal set of tools so I can work inside the containers with my favorite commands.  
 Containers from those images often must perform actions with UID/GID != 0, typically for dealing with regular user files that are shared between host and containers.  
+Generally speaking, I like when my containers have some behaviors and elements of configuration in common with my host system, like the system timezone for example.  
 Also, it's not because it's "only" a container that a Bash session screen in it have to be ugly. When I run commands that produce large lines of results, I like to distinguish easily commands lines from results lines.
 
 That's why I wrote this Dockerfile.  
@@ -36,6 +37,8 @@ when you execute this Dockerfile.
 
 The value you give to main_user_password must be the *openSSL hash* of the real password ; run `openssl passwd` then enter the real password to obtain the hash.  
 The value you give to MAIN_USER_ID is for both UID and GID of the user to be created.
+
+If you want to apply a system timezone, use for example `--build-arg SYSTEM_TIMEZONE=Europe/Paris` or `--build-arg SYSTEM_TIMEZONE=$(cat /etc/timezone)`.
 
 Arguments in uppercase will result in environment variables inside the containers, while arguments in lowercase will not.
 
