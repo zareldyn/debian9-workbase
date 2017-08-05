@@ -8,7 +8,7 @@ LABEL maintainer="zareldyn" \
 ARG MAIN_USER_ID
 ARG MAIN_USER_LOGIN
 #                    openSSL hash for 'password'
-ARG main_user_passwd=l5KfQR935b0s
+ARG main_user_passwd='$1$3zQH3LzF$btPwP2cM/fbEDxGFTJBIq/'
 
 ARG PARENT_HOSTNAME
 ARG SYSTEM_TIMEZONE
@@ -24,7 +24,7 @@ ENV MAIN_USER_ID=${MAIN_USER_ID:-1000} \
 RUN ["/bin/bash", "-c", " \
     echo $SYSTEM_TIMEZONE > /etc/timezone && ln -fs /usr/share/zoneinfo/$SYSTEM_TIMEZONE /etc/localtime && dpkg-reconfigure -f noninteractive tzdata && \
     adduser --uid $MAIN_USER_ID --disabled-password --gecos '' $MAIN_USER_LOGIN && \
-    usermod -p $main_user_passwd $MAIN_USER_LOGIN && \
+    usermod --password \"$main_user_passwd\" $MAIN_USER_LOGIN && \
     apt-get update && apt-get install -y \
         bash-completion \
         less \

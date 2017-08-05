@@ -35,7 +35,7 @@ You can also statically customize the login, ID, and password (might be useful i
 `--build-arg main_user_passwd=l5KfQR935b0s`  
 when you execute this Dockerfile.
 
-The value you give to main_user_password must be the *openSSL hash* of the real password ; run `openssl passwd` then enter the real password to obtain the hash.  
+The value you give to main_user_password must be the *openSSL hash* of the real password ; run `openssl passwd -1` then enter the real password to obtain the hash.  
 The value you give to MAIN_USER_ID is for both UID and GID of the user to be created.
 
 If you want to apply a particular system timezone, use for example `--build-arg SYSTEM_TIMEZONE=Europe/Paris` or `--build-arg SYSTEM_TIMEZONE=$(cat /etc/timezone)`. The default is Etc/UTC.
