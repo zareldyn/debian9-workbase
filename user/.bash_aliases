@@ -1,4 +1,4 @@
-alias nano='nano -uc'
+alias nano='nano -l'
 
 alias grep='grep --color'
 
