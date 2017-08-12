@@ -8,10 +8,10 @@ A customized minimal Debian 9 Docker image with one regular user, one text edito
 I often need to build Debian-based Docker images that, in addition to their main purpose (web server, etc), must have the minimal set of tools so I can work inside the containers with my favorite commands.  
 Containers from those images often must perform actions with UID/GID != 0, typically for dealing with regular user files that are shared between host and containers.  
 Generally speaking, I like when my containers have some behaviors and elements of configuration in common with my host system, like the system timezone for example.  
-Also, it's not because it's "only" a container that a Bash session screen in it have to be ugly. When I run commands that produce large lines of results, I like to distinguish easily commands lines from results lines.
+Also, it's not because it's "only" a container that a Bash session screen in it has to be ugly. When I run commands that produce large lines of results, I like to distinguish easily commands lines from results lines.
 
 That's why I wrote this Dockerfile.  
-It builds an image that is intended to be **a base for building other images** which need these requirements. The installed text editor is *Nano*. See the Dockerfile for a complete list of what is installed.
+It builds an image that is intended to be **a base for building other images** which need to satisfy these considerations. The installed text editor is *Nano*. See the Dockerfile for a complete list of what is installed.
 
 ## How to use
 
