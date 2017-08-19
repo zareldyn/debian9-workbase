@@ -38,7 +38,8 @@ when you execute this Dockerfile.
 The value you give to main_user_password must be the *openSSL hash* of the real password ; run `openssl passwd -1` then enter the real password to obtain the hash.  
 The value you give to MAIN_USER_ID is for both UID and GID of the user to be created.
 
-If you want to apply a particular system timezone, use for example `--build-arg SYSTEM_TIMEZONE=Europe/Paris` or `--build-arg SYSTEM_TIMEZONE=$(cat /etc/timezone)`. The default is Etc/UTC.
+If you want to apply a particular system timezone, use for example `--build-arg SYSTEM_TIMEZONE=Europe/Paris` or `--build-arg SYSTEM_TIMEZONE=$(cat /etc/timezone)`. The default is Etc/UTC.  
+If you want to apply a particular default locale, use for example `--build-arg default_locale=fr_FR.UTF-8`. The default is en_US.UTF-8.
 
 Arguments in uppercase will result in environment variables inside the containers, while arguments in lowercase will not.
 

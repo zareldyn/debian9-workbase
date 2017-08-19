@@ -12,6 +12,7 @@ ARG main_user_passwd='$1$3zQH3LzF$btPwP2cM/fbEDxGFTJBIq/'
 
 ARG PARENT_HOSTNAME
 ARG SYSTEM_TIMEZONE
+ARG default_locale=en_US.UTF-8
 
 
 ENV MAIN_USER_ID=${MAIN_USER_ID:-1000} \
@@ -28,9 +29,11 @@ RUN ["/bin/bash", "-c", " \
     apt-get update && apt-get install -y \
         bash-completion \
         less \
+        locales \
         nano \
         tree && \
-    rm -rf /var/lib/apt/lists/* \
+    rm -rf /var/lib/apt/lists/* && \
+    sed -i 's/^# *\\('$default_locale'\\)/\\1/' /etc/locale.gen && locale-gen && update-locale LANG=$default_locale \
 "]
 
 
@@ -38,3 +41,7 @@ RUN ["/bin/bash", "-c", " \
 COPY root/* /root/
 COPY user/* /home/$MAIN_USER_LOGIN/
 RUN chown -R $MAIN_USER_ID:$MAIN_USER_ID /home/$MAIN_USER_LOGIN
+
+
+# For a default environment with the locale applied
+CMD su
