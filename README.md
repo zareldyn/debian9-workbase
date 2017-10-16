@@ -43,6 +43,9 @@ If you want to apply a particular default locale, use for example `--build-arg d
 
 Arguments in uppercase will result in environment variables inside the containers, while arguments in lowercase will not.
 
+Since the *container's name* is not known inside the container itself, it can be passed dynamically. Starting your container with `-e CONTAINER_NAME=the-container-name` will result to a better prompt, like "root@the-container-name@host".  
+Warning! This method does NOT replace the real *hostname* of the container, which always looks something like "a34836157dfb". Also, if you provide a name (via `--name`) that is different from the `-e CONTAINER_NAME` method, the interest seems to be limited. Anyway, for now the CONTAINER_NAME environment variable is used in the Bash prompt only.
+
 ### Finally
 
 Once this image is built, you can create images that are based on it.  
