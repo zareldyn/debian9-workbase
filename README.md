@@ -10,7 +10,7 @@ Containers from those images often must perform actions with UID/GID != 0, typic
 Generally speaking, I like when my containers have some behaviors and elements of configuration in common with my host system, like the system timezone for example.  
 Also, it's not because it's "only" a container that a Bash session screen in it has to be ugly. When I run commands that produce large lines of results, I like to distinguish easily commands lines from results lines.
 
-That's why I wrote this Dockerfile.  
+That's why I've written this Dockerfile.  
 It builds an image that is intended to be **a base for building other images** which need to satisfy these considerations. The installed text editor is *Nano*. See the Dockerfile for a complete list of what is installed.
 
 ## How to use
