@@ -26,6 +26,7 @@ RUN ["/bin/bash", "-c", " \
     echo $SYSTEM_TIMEZONE > /etc/timezone && ln -fs /usr/share/zoneinfo/$SYSTEM_TIMEZONE /etc/localtime && dpkg-reconfigure -f noninteractive tzdata && \
     adduser --uid $MAIN_USER_ID --disabled-password --gecos '' $MAIN_USER_LOGIN && \
     usermod --password \"$main_user_passwd\" $MAIN_USER_LOGIN && \
+    echo 'deb http://ftp.debian.org/debian stretch-backports main' >> /etc/apt/sources.list && \
     apt-get update && apt-get install -y \
         bash-completion \
         less \
