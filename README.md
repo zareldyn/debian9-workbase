@@ -49,4 +49,6 @@ Warning! This method does NOT replace the real *hostname* of the container. Also
 ### Finally
 
 Once this image is built, you can create images that are based on it.  
+The internal environment variable WORKBASE_VERSION contains the version number of the last known stable state. You can do something like `docker run -ti --rm my-debian9 bash -c 'echo $WORKBASE_VERSION'` to check this version number before building an image based on "my-debian9".
+
 The login, ID and password of the normal user can be changed dynamically if you define an *entrypoint* that uses tools like usermod/groupmod.
