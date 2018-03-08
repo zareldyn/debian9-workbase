@@ -17,6 +17,8 @@ It builds an image that is intended to be **a base for building other images** w
 
 ### Basic build
 
+`docker build --no-cache -t my-debian9 https://gitlab.zareldyn.net/zareldyn/debian9-workbase.git`
+
 With no customization (see below), this will produce a Debian 9.0 image in which a user called "mainuser" with ID 1000 is present. The password for this user is "password".  
 If you run a container from it with no command (defaults to a Bash session), you'll see something like "root@a34836157dfb@host". The part "@host" means that the container is run on a host system whose name was not passed to the container. In fact, this part is intended to show the *hostname* of the host machine. This is useful when you have to SSH and work inside multiple containers running on multiple remote machines. Read the following explanations for how to provide this name.
 
