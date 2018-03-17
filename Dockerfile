@@ -19,7 +19,7 @@ ENV MAIN_USER_ID=${MAIN_USER_ID:-1000} \
     MAIN_USER_LOGIN=${MAIN_USER_LOGIN:-mainuser} \
     PARENT_HOSTNAME=${PARENT_HOSTNAME:-host} \
     SYSTEM_TIMEZONE=${SYSTEM_TIMEZONE:-Etc/UTC}\
-    WORKBASE_VERSION="1.0.2"
+    WORKBASE_VERSION="1.0.0"
 
 
 # Creates the main user and installs some packages
