@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Little fix in README
-- Adjust console size (no longer limited to 80 characters wide)
 
 
 ## [1.0.0] - 2018-03-17
