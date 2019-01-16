@@ -13,3 +13,4 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 . /etc/bash_completion
+shopt -s checkwinsize
